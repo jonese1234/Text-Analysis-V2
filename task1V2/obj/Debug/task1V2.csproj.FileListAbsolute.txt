@@ -1,0 +1,17 @@
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\Programing\task1V2\task1V2\bin\Debug\task1V2.exe.config
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\Programing\task1V2\task1V2\bin\Debug\task1V2.exe
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\Programing\task1V2\task1V2\bin\Debug\task1V2.pdb
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\Programing\task1V2\task1V2\obj\Debug\task1V2.exe
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\Programing\task1V2\task1V2\obj\Debug\task1V2.pdb
+E:\Programing\task1V2\task1V2\bin\Debug\task1V2.exe.config
+E:\Programing\task1V2\task1V2\obj\Debug\task1V2.exe
+E:\Programing\task1V2\task1V2\obj\Debug\task1V2.pdb
+E:\Programing\task1V2\task1V2\obj\Debug\task1V2.csprojResolveAssemblyReference.cache
+E:\Programing\task1V2\task1V2\bin\Debug\task1V2.exe
+E:\Programing\task1V2\task1V2\bin\Debug\task1V2.pdb
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\new\Programing\task1V2\task1V2\bin\Debug\task1V2.exe.config
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\new\Programing\task1V2\task1V2\obj\Debug\task1V2.exe
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\new\Programing\task1V2\task1V2\obj\Debug\task1V2.pdb
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\new\Programing\task1V2\task1V2\bin\Debug\task1V2.exe
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\new\Programing\task1V2\task1V2\bin\Debug\task1V2.pdb
+C:\Users\rjrhy\Desktop\Code\Uni Work\Year 1\new\Programing\task1V2\task1V2\obj\Debug\task1V2.csprojResolveAssemblyReference.cache

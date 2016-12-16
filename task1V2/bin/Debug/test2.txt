@@ -1,0 +1,6 @@
+The BBC has presented the company with evidence that many of its customers' router credentials have been hacked, putting them at risk of data theft.
+The UK broadband provider confirmed that the sample of stolen router IDs it had been shown was real.
+But it is still advising users that there is "no need" to change their routers' settings. A cyber-security advisor to Europol said he was astounded by the decision.
+"If TalkTalk has evidence that significant numbers of passwords are out in the wild, then at the very least they should be advising their customers to change their passwords," said the University of Surrey's Prof Alan Woodward.
+"To say they see no need to do so is, frankly, astonishing."
+A spokeswoman for TalkTalk said that customers could change their settings "if they wish" but added that she believed there was "no risk to their personal information".
