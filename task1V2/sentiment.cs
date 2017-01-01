@@ -63,7 +63,7 @@ namespace task1V2
 
             }
 
-            Console.WriteLine("Positive Words: {0}, Negative Words: {1}, Neutral Words: {2}, Total Words: {3}", posWordCount.ToString(), negWordCount.ToString(), neutWordCount.ToString(), totalWordCount.ToString());
+            Console.WriteLine("\nPositive Words: {0}, Negative Words: {1}, Neutral Words: {2}, Total Words: {3}", posWordCount.ToString(), negWordCount.ToString(), neutWordCount.ToString(), totalWordCount.ToString());
 
             // Calculation to return the persentage positive of the text
             float perPos = posWordCount / totalWordCount;

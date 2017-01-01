@@ -13,17 +13,45 @@ namespace task1V2
         // Main function that runs the program.
         static void Main(string[] args)
         {
-            int choice = getUserChoice();
-
-            // Selects which option to run.
-            switch (choice)
+            bool moreInput = true;
+            while (moreInput)
             {
-                case 1:
-                    option1();
-                    break;
-                case 2:
-                    option2();
-                    break;
+                int choice = getUserChoice();
+
+                // Selects which option to run.
+                switch (choice)
+                {
+                    case 1:
+                        option1();
+                        break;
+                    case 2:
+                        option2();
+                        break;
+                }
+
+                // Allows for more text analisis with out closing program.
+                bool correctImput = false;
+                while (!correctImput)
+                {
+                    Console.WriteLine("Do you want to do more text analasis? (y/n): ");
+                    string imput = Console.ReadLine();
+
+                    if (imput == "y" || imput == "Y")
+                    {
+                        moreInput = true;
+                        correctImput = true;
+                        Console.Clear();
+                    }
+                    else if (imput == "n" || imput == "N")
+                    {
+                        moreInput = false;
+                        correctImput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid imput try again.");
+                    }
+                }
             }
         }
 
@@ -108,7 +136,10 @@ namespace task1V2
                 }
             }
             Console.WriteLine("\nAll sentances:\n");
-            sentanceList.ForEach(Console.WriteLine);
+            foreach (sentence s in sentanceList)
+            {
+                Console.WriteLine(s.getSentence());
+            }
             Console.WriteLine("");
 
             // Runs both the text analasis and sentiment analysis
@@ -161,8 +192,9 @@ namespace task1V2
                     Console.WriteLine("");
 
                     // Does longword analasis and text analasis and sentiment analasis
-                    longwordAnalasis(sentanceList, fileName);
+                    Console.WriteLine("\tRESULTS");
                     listAnalasis(sentanceList);
+                    longwordAnalasis(sentanceList, fileName);
                     analysisSentiment(sentanceList);
                     validFileName = true;
                     Console.ReadLine();
@@ -185,7 +217,7 @@ namespace task1V2
             // returns the score as a %
             float score = analyser.analyseSentences(sentanceList);
             // Prints the score to 3dp
-            Console.WriteLine("\nThe Sentiment of the text was determind as {0}% positive.", score.ToString("n3"));
+            Console.WriteLine("The Sentiment of the text was determined as {0}% positive.", score.ToString("n3"));
 
         }
 
@@ -198,10 +230,10 @@ namespace task1V2
             // String list of long words
             List<string> longWords = new List<string>();
 
-            // For each sentance in the sentance list it splits at a space, fullstop, comma, or speech marks.
+            // For each sentance in the sentance list it splits at a space, fullstop, ect.
             foreach (sentence sentance in sentanceList)
             {
-                var result = sentance.getSentence().Split(' ', '.', ',', '"').Where(x => x.Length >= longWordLength);
+                var result = sentance.getSentence().Split(' ', '.', ',', '"', '/').Where(x => x.Length >= longWordLength);
                 foreach (string word in result)
                 {
                     // If the word is not already in the list then add it, and make all the letters lowercase
@@ -209,9 +241,16 @@ namespace task1V2
                         longWords.Add(word.ToLower());
                 }
             }
+
+            // Sorts alphabeticaly
+            longWords.Sort();
             // This makes the filename is the filename with out the .txt (i.e "test.txt" -> "test")
             fileName = fileName.Substring(0, fileName.LastIndexOf("."));
-            //longWords.ForEach(Console.WriteLine);
+            Console.WriteLine("\nLong words: ");
+            foreach(string word in longWords)
+            {
+                Console.WriteLine("\t{0}", word);
+            }
             // Writes all the long words in the list to the filename + _longWords one per line (i.e "test" -> "test_longWords.txt")
             System.IO.File.WriteAllLines(fileName + "_longWords.txt", longWords);
         }
@@ -278,7 +317,7 @@ namespace task1V2
                             uppercaseCount++;
                         }
                         // if letter is in the vowel array then add to vowel count
-                        if (vowel.Contains(currentSentance[x]))
+                        if (vowel.Contains(currentSentance.ToLower()[x]))
                         {
                             vowelCount++;
                         }
@@ -300,7 +339,9 @@ namespace task1V2
             Console.WriteLine("Uppercase Count: {0}", uppercaseCount);
             Console.WriteLine("Lowercase Count: {0}", lowercaseCount);
 
-            Console.WriteLine("Letter Frequency:");
+            Console.WriteLine("\nLetter Frequency:");
+            // Sorts by decending order
+            letterCount = letterCount.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
             foreach (var item in letterCount)
                 Console.WriteLine("\tThe letter '" + item.Key + "' appeared " + item.Value + " times.");
